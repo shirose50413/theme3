@@ -1,20 +1,5 @@
-<h1>User info</h1>
-<div>
-  <%= image_tag @user.get_profile_image(100,100) %>
-  <table>
-    <tr>
-      <td><strong>name</strong></td>
-      <td><strong><%= @user.name %></strong></td>
-    </tr>
-    <tr>
-      <td><strong>introduction</strong></td>
-      <td><strong><%= @user.introduction %></strong></td>
-    </tr>
-  </table>
-  <% if @user == current_user %>
-    <p><%= link_to "edit", edit_user_path(current_user.id) %></p>
-  <% end %>
-</div>
+<%= render 'info', user: @user %>
+<%= render 'books/new', book: @newbook %>
 
 <h1>Books</h1>
 <% @books.each do |book| %>
